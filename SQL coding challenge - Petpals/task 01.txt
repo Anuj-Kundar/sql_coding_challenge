@@ -1,4 +1,5 @@
-Q. Provide a SQL script that initializes the database for the Pet Adoption Platform”PetPals”:
+Q. Provide a SQL script that initializes the database for the 
+Pet Adoption Platform”PetPals”:
 
 mysql> CREATE DATABASE Petpals;
 Query OK, 1 row affected (0.16 sec)

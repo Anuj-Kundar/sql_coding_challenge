@@ -1,0 +1,62 @@
+// Insertion records for the tables in the database
+
+
+mysql> INSERT INTO Pets (Name, Age, Breed, Type, AvailableForAdoption) VALUES
+    -> ('Bella', 3, 'Golden Retriever', 'Dog', 1),
+    -> ('Luna', 2, 'Siamese', 'Cat', 1),
+    -> ('Max', 5, 'BullDog', 'Dog', 0),
+    -> ('Charlie', 4, 'Beagle', 'Dog', 1),
+    -> ('Milo', 1, 'Persian', 'Cat', 1),
+    -> ('Daisy', 6, 'Poodle', 'Dog', 0),
+    -> ('Oliver', 2, 'Maine Coon', 'Cat', 1),
+    -> ('Buddy', 3, 'Shiba Inu', 'Dog', 1),
+    -> ('Coco', 4, 'RotWeiler', 'Dog', 1),
+    -> ('Simba', 5, 'Bengal', 'Cat', 1);
+Query OK, 10 rows affected (0.09 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO Shelters (Name, Location) VALUES
+    -> ('Aashray Foundation', 'Bhiwandi City, Bhiwandi'),
+    -> ('Jeevan Pariwar Foundation', 'Movie star lane goregaon, Mumbai'),
+    -> ('Bombay Society For Prevention Of Cruelty To Animals', 'Parel Road, Mumbai'),
+    -> ('BMC Dog Control Cell', 'Station Road Bandra , Mumbai'),
+    -> ('The Welfare Of Stray Dogs', 'Sewri, Mumbai');
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO Donations (DonorName, DonationType, DonationAmount, DonationItem, DonationDate) VALUES
+    -> ('Ayyaj Aga', 'Cash', 200.00, NULL, '2023-09-15 14:30:00'),
+    -> ('Prashant Thombre', 'Item', NULL, 'Dog Food', '2023-09-20 10:45:00'),
+    -> ('Sahil Babar', 'Cash', 150.00, NULL, '2023-09-25 12:00:00'),
+    -> ('Sandeep Bais', 'Item', NULL, 'Cat Toys', '2023-09-28 09:30:00'),
+    -> ('Vishnukant Mule', 'Cash', 100.00, NULL, '2023-10-01 11:00:00'),
+    -> ('Chirag Padyal', 'Item', NULL, 'Dog Beds', '2023-10-03 15:15:00'),
+    -> ('Prathamesh Naik', 'Cash', 75.00, NULL, '2023-10-05 13:45:00'),
+    -> ('Siddesh Nangare', 'Item', NULL, 'Cat Litter', '2023-10-07 16:00:00'),
+    -> ('Raj Rawat', 'Cash', 50.00, NULL, '2023-10-09 10:30:00'),
+    -> ('Suraj Singh', 'Item', NULL, 'Pet Leashes', '2023-10-10 14:00:00');
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO AdoptionEvents (EventName, EventDate, Location) VALUES
+    -> ('Fall Pet Adoption Fair', '2023-09-10 09:00:00', 'Community Park, Springfield'),
+    -> ('Adopt a Pet Weekend', '2023-09-17 10:00:00', 'City Hall, Greenville'),
+    -> ('Shelter Pets Day', '2023-09-24 11:00:00', 'Town Square, Riverdale'),
+    -> ('Pets for Homes Event', '2023-10-01 09:30:00', 'Local Mall, Laketown'),
+    -> ('Adopt a Friend Event', '2023-10-08 08:00:00', 'County Fairgrounds, Springfield');
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO Participants (ParticipantName, ParticipantType, EventID) VALUES
+    -> ('Aashray Foundation', 'Shelter', 1),
+    -> ('Jeevan Pariwar Foundation', 'Shelter', 2),
+    -> ('Bombay Society For Prevention Of Cruelty To Animals', 'Shelter', 3),
+    -> ('BMC Dog Control Cell', 'Shelter', 4),
+    -> ('The Welfare Of Stray Dogs', 'Shelter', 5),
+    ->
+    -> -- Insert into Participants table (Donors participating as adopters in events)
+    -> ('Ayyaj Aga', 'Adopter', 1),
+    -> ('Prashant Thombre', 'Adopter', 2),
+    -> ('Sahil Babar', 'Adopter', 3),
+    -> ('Sandeep Bais', 'Adopter', 4),
+    -> ('Vishnukant Mule', 'Adopter', 5);
