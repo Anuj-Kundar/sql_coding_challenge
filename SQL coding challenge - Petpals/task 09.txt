@@ -17,7 +17,7 @@ mysql> INSERT INTO Owners (OwnerID, PetID, OwnerName) VALUES
     -> (2, 2, 'Bala'),
     -> (3, 3, 'Chirag'),
     -> (4, 4, 'Dev'),
-    -> (5, 5,  NULL);
+    -> (5, 5,  'NeeL');
 Query OK, 5 rows affected (0.14 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 

@@ -5,5 +5,4 @@ mysql> CREATE DATABASE Petpals;
 Query OK, 1 row affected (0.16 sec)
 
 mysql> use Petpals;
-Database changed
-
+Database changedgi 
