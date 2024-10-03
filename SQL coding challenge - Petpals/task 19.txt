@@ -1,0 +1,37 @@
+Q. List all possible combinations of shelters and adoption events.
+
+
+mysql> SELECT S.Name AS ShelterName, AE.EventName AS AdoptionEventName
+    -> FROM Shelters S
+    -> CROSS JOIN AdoptionEvents AE
+    -> ORDER BY S.Name, AE.EventName;
++-----------------------------------------------------+------------------------+
+| ShelterName                                         | AdoptionEventName      |
++-----------------------------------------------------+------------------------+
+| Aashray Foundation                                  | Adopt a Friend Event   |
+| Aashray Foundation                                  | Adopt a Pet Weekend    |
+| Aashray Foundation                                  | Fall Pet Adoption Fair |
+| Aashray Foundation                                  | Pets for Homes Event   |
+| Aashray Foundation                                  | Shelter Pets Day       |
+| BMC Dog Control Cell                                | Adopt a Friend Event   |
+| BMC Dog Control Cell                                | Adopt a Pet Weekend    |
+| BMC Dog Control Cell                                | Fall Pet Adoption Fair |
+| BMC Dog Control Cell                                | Pets for Homes Event   |
+| BMC Dog Control Cell                                | Shelter Pets Day       |
+| Bombay Society For Prevention Of Cruelty To Animals | Adopt a Friend Event   |
+| Bombay Society For Prevention Of Cruelty To Animals | Adopt a Pet Weekend    |
+| Bombay Society For Prevention Of Cruelty To Animals | Fall Pet Adoption Fair |
+| Bombay Society For Prevention Of Cruelty To Animals | Pets for Homes Event   |
+| Bombay Society For Prevention Of Cruelty To Animals | Shelter Pets Day       |
+| Jeevan Pariwar Foundation                           | Adopt a Friend Event   |
+| Jeevan Pariwar Foundation                           | Adopt a Pet Weekend    |
+| Jeevan Pariwar Foundation                           | Fall Pet Adoption Fair |
+| Jeevan Pariwar Foundation                           | Pets for Homes Event   |
+| Jeevan Pariwar Foundation                           | Shelter Pets Day       |
+| The Welfare Of Stray Dogs                           | Adopt a Friend Event   |
+| The Welfare Of Stray Dogs                           | Adopt a Pet Weekend    |
+| The Welfare Of Stray Dogs                           | Fall Pet Adoption Fair |
+| The Welfare Of Stray Dogs                           | Pets for Homes Event   |
+| The Welfare Of Stray Dogs                           | Shelter Pets Day       |
++-----------------------------------------------------+------------------------+
+25 rows in set (0.19 sec)
