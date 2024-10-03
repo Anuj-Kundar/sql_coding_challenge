@@ -1,0 +1,19 @@
+Q. Retrieve a list of unique breeds for pets with ages between 1 and 5 years.
+
+mysql> SELECT DISTINCT Breed
+    -> FROM Pets
+    -> WHERE Age BETWEEN 1 AND 5;
++------------------+
+| Breed            |
++------------------+
+| Golden Retriever |
+| Siamese          |
+| BullDog          |
+| Beagle           |
+| Persian          |
+| Maine Coon       |
+| Shiba Inu        |
+| RotWeiler        |
+| Bengal           |
++------------------+
+9 rows in set (0.12 sec)

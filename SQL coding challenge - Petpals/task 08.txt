@@ -1,0 +1,17 @@
+-- SQL query to calculate the total donation amount for each shelter
+
+
+mysql> SELECT  S.Name AS ShelterName, IFNULL(SUM(D.DonationAmount), 0) AS TotalDonationAmount
+    -> FROM Shelters S
+    -> LEFT JOIN Donations D ON S.ShelterID = D.DonationID
+    -> GROUP BY S.Name;
++-----------------------------------------------------+---------------------+
+| ShelterName                                         | TotalDonationAmount |
++-----------------------------------------------------+---------------------+
+| Aashray Foundation                                  |              200.00 |
+| Jeevan Pariwar Foundation                           |                0.00 |
+| Bombay Society For Prevention Of Cruelty To Animals |              150.00 |
+| BMC Dog Control Cell                                |                0.00 |
+| The Welfare Of Stray Dogs                           |              100.00 |
++-----------------------------------------------------+---------------------+
+5 rows in set (0.14 sec)

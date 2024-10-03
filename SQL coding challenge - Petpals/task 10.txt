@@ -1,0 +1,7 @@
+Q.Write an SQL query that retrieves the total donation amount for each month and year (e.g., January 2023) 
+  from the "Donations" table. The result should include the month-year and the corresponding total donation amount. 
+  Ensure that the query handles cases where no donations were made in a specific month-year.
+
+->
+
+

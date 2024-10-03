@@ -1,0 +1,15 @@
+Q. Find the total number of participants in events organized by shelters located in specific city.Example: City=Mumbai
+
+->
+
+mysql> SELECT COUNT(DISTINCT PT.ParticipantID) AS TotalParticipants
+    -> FROM Participants PT
+    -> JOIN AdoptionEvents AE ON PT.EventID = AE.EventID
+    -> JOIN Shelters S ON AE.Location = S.Location
+    -> WHERE S.Location LIKE '%Mumbai%';
++-------------------+
+| TotalParticipants |
++-------------------+
+|                 8 |
++-------------------+
+1 row in set (0.11 sec)

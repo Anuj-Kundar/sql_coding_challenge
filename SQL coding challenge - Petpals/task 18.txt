@@ -1,0 +1,8 @@
+Q. Find pairs of pets from the same shelter that have the same breed
+
+SELECT P1.PetID AS PetID1, P1.Name AS PetName1, 
+    P2.PetID AS PetID2, P2.Name AS PetName2, 
+    P1.Breed, P1.ShelterID
+FROM Pets P1
+JOIN Pets P2 ON P1.ShelterID = P2.ShelterID AND P1.Breed = P2.Breed AND P1.PetID < P2.PetID
+ORDER BY P1.ShelterID, P1.Breed;

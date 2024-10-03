@@ -1,0 +1,20 @@
+Q. Find the pets that have not been adopted by selecting their information from the 'Pet' table
+
+->
+
+mysql> SELECT * FROM Pets
+    -> WHERE AvailableForAdoption = 1;
++-------+---------+------+------------------+------+----------------------+
+| PetID | Name    | Age  | Breed            | Type | AvailableForAdoption |
++-------+---------+------+------------------+------+----------------------+
+|     1 | Bella   |    3 | Golden Retriever | Dog  |                    1 |
+|     2 | Luna    |    2 | Siamese          | Cat  |                    1 |
+|     4 | Charlie |    4 | Beagle           | Dog  |                    1 |
+|     5 | Milo    |    1 | Persian          | Cat  |                    1 |
+|     7 | Oliver  |    2 | Maine Coon       | Cat  |                    1 |
+|     8 | Buddy   |    3 | Shiba Inu        | Dog  |                    1 |
+|     9 | Coco    |    4 | RotWeiler        | Dog  |                    1 |
+|    10 | Simba   |    5 | Bengal           | Cat  |                    1 |
++-------+---------+------+------------------+------+----------------------+
+8 rows in set (0.01 sec)
+

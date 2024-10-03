@@ -1,0 +1,55 @@
+Q. Retrieve a list of pets and their respective shelters where the pets are currently available for adoption
+
+->
+
+mysql> SELECT P.Name AS PetName, S.Name AS ShelterName
+    -> FROM Pets P
+    -> JOIN Participants PT ON PT.ParticipantType = 'Shelter'
+    -> JOIN AdoptionEvents AE ON PT.EventID = AE.EventID
+    -> JOIN Shelters S ON PT.ParticipantName = S.Name
+    -> WHERE P.AvailableForAdoption = 1;
++---------+-----------------------------------------------------+
+| PetName | ShelterName                                         |
++---------+-----------------------------------------------------+
+| Bella   | Aashray Foundation                                  |
+| Luna    | Aashray Foundation                                  |
+| Charlie | Aashray Foundation                                  |
+| Milo    | Aashray Foundation                                  |
+| Oliver  | Aashray Foundation                                  |
+| Buddy   | Aashray Foundation                                  |
+| Coco    | Aashray Foundation                                  |
+| Simba   | Aashray Foundation                                  |
+| Bella   | Jeevan Pariwar Foundation                           |
+| Luna    | Jeevan Pariwar Foundation                           |
+| Charlie | Jeevan Pariwar Foundation                           |
+| Milo    | Jeevan Pariwar Foundation                           |
+| Oliver  | Jeevan Pariwar Foundation                           |
+| Buddy   | Jeevan Pariwar Foundation                           |
+| Coco    | Jeevan Pariwar Foundation                           |
+| Simba   | Jeevan Pariwar Foundation                           |
+| Bella   | Bombay Society For Prevention Of Cruelty To Animals |
+| Luna    | Bombay Society For Prevention Of Cruelty To Animals |
+| Charlie | Bombay Society For Prevention Of Cruelty To Animals |
+| Milo    | Bombay Society For Prevention Of Cruelty To Animals |
+| Oliver  | Bombay Society For Prevention Of Cruelty To Animals |
+| Buddy   | Bombay Society For Prevention Of Cruelty To Animals |
+| Coco    | Bombay Society For Prevention Of Cruelty To Animals |
+| Simba   | Bombay Society For Prevention Of Cruelty To Animals |
+| Bella   | BMC Dog Control Cell                                |
+| Luna    | BMC Dog Control Cell                                |
+| Charlie | BMC Dog Control Cell                                |
+| Milo    | BMC Dog Control Cell                                |
+| Oliver  | BMC Dog Control Cell                                |
+| Buddy   | BMC Dog Control Cell                                |
+| Coco    | BMC Dog Control Cell                                |
+| Simba   | BMC Dog Control Cell                                |
+| Bella   | The Welfare Of Stray Dogs                           |
+| Luna    | The Welfare Of Stray Dogs                           |
+| Charlie | The Welfare Of Stray Dogs                           |
+| Milo    | The Welfare Of Stray Dogs                           |
+| Oliver  | The Welfare Of Stray Dogs                           |
+| Buddy   | The Welfare Of Stray Dogs                           |
+| Coco    | The Welfare Of Stray Dogs                           |
+| Simba   | The Welfare Of Stray Dogs                           |
++---------+-----------------------------------------------------+
+40 rows in set (0.04 sec)

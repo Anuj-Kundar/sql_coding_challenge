@@ -1,0 +1,15 @@
+Q. Retrieve the names of all adopted pets along with the adopter's name from the 'Adoption' and 'User' tables
+
+mysql> SELECT P.Name AS PetName, O.OwnerName AS AdopterName
+    -> FROM Pets P
+    -> JOIN Owners O ON P.PetID = O.PetID
+    -> WHERE O.OwnerName IS NOT NULL;
++---------+-------------+
+| PetName | AdopterName |
++---------+-------------+
+| Bella   | Aryan       |
+| Luna    | Bala        |
+| Max     | Chirag      |
+| Charlie | Dev         |
++---------+-------------+
+4 rows in set (0.02 sec)

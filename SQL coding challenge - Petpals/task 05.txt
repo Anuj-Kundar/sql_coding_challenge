@@ -1,0 +1,22 @@
+Q. Write an SQL query that retrieves a list of available pets (those marked as available for adoption) from the "Pets" table. 
+   Include the pet's name, age, breed, and type in the resultset. 
+   Ensure that the query filters out pets that are not available for adoption
+
+====Solution====
+
+mysql> select Name, Age, Breed, Type
+    -> from Pets
+    -> where AvailableForAdoption = 1;
++---------+-----+------------------+------+
+| Name    | Age | Breed            | Type |
++---------+-----+------------------+------+
+| Bella   |   3 | Golden Retriever | Dog  |
+| Luna    |   2 | Siamese          | Cat  |
+| Charlie |   4 | Beagle           | Dog  |
+| Milo    |   1 | Persian          | Cat  |
+| Oliver  |   2 | Maine Coon       | Cat  |
+| Buddy   |   3 | Shiba Inu        | Dog  |
+| Coco    |   4 | RotWeiler        | Dog  |
+| Simba   |   5 | Bengal           | Cat  |
++---------+-----+------------------+------+
+8 rows in set (0.03 sec)

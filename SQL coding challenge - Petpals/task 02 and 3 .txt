@@ -1,0 +1,62 @@
+Q. Create tables for pets, shelters, donations, adoption events, and participants :
+
+-- Pets table
+
+mysql> CREATE TABLE Pets (
+    ->     PetID INT PRIMARY KEY AUTO_INCREMENT,
+    ->     Name VARCHAR(255) NOT NULL,
+    ->     Age INT NOT NULL,
+    ->     Breed VARCHAR(255),
+    ->     Type VARCHAR(50),
+    ->     AvailableForAdoption BIT DEFAULT 1
+    -> );
+Query OK, 0 rows affected (0.19 sec)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Shelters table
+
+mysql> CREATE TABLE Shelters (
+    ->     ShelterID INT PRIMARY KEY AUTO_INCREMENT,
+    ->     Name VARCHAR(255) NOT NULL,
+    ->     Location VARCHAR(255) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Donations table
+CREATE TABLE Donations (
+    DonationID INT PRIMARY KEY AUTO_INCREMENT,
+    DonorName VARCHAR(255) NOT NULL,
+    DonationType VARCHAR(50) NOT NULL,
+    DonationAmount DECIMAL(10, 2),
+    DonationItem VARCHAR(255),
+    DonationDate DATETIME NOT NULL
+);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--  AdoptionEvents table
+CREATE TABLE AdoptionEvents (
+    EventID INT PRIMARY KEY AUTO_INCREMENT,
+    EventName VARCHAR(255) NOT NULL,
+    EventDate DATETIME NOT NULL,
+    Location VARCHAR(255) NOT NULL
+);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Participants table
+CREATE TABLE Participants (
+    ParticipantID INT PRIMARY KEY AUTO_INCREMENT,
+    ParticipantName VARCHAR(255) NOT NULL,
+    ParticipantType VARCHAR(50) NOT NULL,
+    EventID INT,
+    FOREIGN KEY (EventID) REFERENCES AdoptionEvents(EventID)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+

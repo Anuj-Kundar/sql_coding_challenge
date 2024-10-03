@@ -1,0 +1,42 @@
+Q.Write an SQL query that retrieves the names of pets from the "Pets" table that do not have an owner 
+  (i.e., where "OwnerID" is null). 
+  Include the pet's name, age, breed, and type in the result set
+
+-- Create owners table:
+mysql> CREATE TABLE Owners (
+    ->     OwnerID INT PRIMARY KEY,
+    ->     PetID INT,
+    ->     OwnerName VARCHAR(50),
+    ->     FOREIGN KEY (PetID) REFERENCES Pets(PetID)
+    -> );
+Query OK, 0 rows affected (0.29 sec)
+
+-- Insert data into owners table:
+mysql> INSERT INTO Owners (OwnerID, PetID, OwnerName) VALUES
+    -> (1, 1, 'Aryan'),
+    -> (2, 2, 'Bala'),
+    -> (3, 3, 'Chirag'),
+    -> (4, 4, 'Dev'),
+    -> (5, 5,  NULL);
+Query OK, 5 rows affected (0.14 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+-- Query to retrieve pets without an owner:
+mysql> SELECT P.Name, P.Age, P.Breed, P.Type
+    -> FROM Pets P
+    -> LEFT JOIN Owners O ON P.PetID = O.PetID
+    -> WHERE O.OwnerID IS NULL;
++--------+------+------------+------+
+| Name   | Age  | Breed      | Type |
++--------+------+------------+------+
+| Daisy  |    6 | Poodle     | Dog  |
+| Oliver |    2 | Maine Coon | Cat  |
+| Buddy  |    3 | Shiba Inu  | Dog  |
+| Coco   |    4 | RotWeiler  | Dog  |
+| Simba  |    5 | Bengal     | Cat  |
++--------+------+------------+------+
+5 rows in set (0.03 sec)
+
+
+
+

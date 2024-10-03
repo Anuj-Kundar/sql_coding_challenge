@@ -1,0 +1,20 @@
+Q. Retrieve a list of all shelters along with the count of pets currently available for adoption in each shelter.
+
+->
+
+mysql> SELECT S.Name AS ShelterName, COUNT(P.PetID) AS AvailablePetsCount
+    -> FROM Shelters S
+    -> LEFT JOIN Participants PT ON S.Name = PT.ParticipantName AND PT.ParticipantType = 'Shelter'
+    -> LEFT JOIN AdoptionEvents AE ON PT.EventID = AE.EventID
+    -> LEFT JOIN Pets P ON P.AvailableForAdoption = 1
+    -> GROUP BY S.Name;
++-----------------------------------------------------+--------------------+
+| ShelterName                                         | AvailablePetsCount |
++-----------------------------------------------------+--------------------+
+| Aashray Foundation                                  |                  8 |
+| Jeevan Pariwar Foundation                           |                  8 |
+| Bombay Society For Prevention Of Cruelty To Animals |                  8 |
+| BMC Dog Control Cell                                |                  8 |
+| The Welfare Of Stray Dogs                           |                  8 |
++-----------------------------------------------------+--------------------+
+5 rows in set (0.02 sec)

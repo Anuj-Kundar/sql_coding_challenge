@@ -1,0 +1,19 @@
+Q.Write an SQL query that retrieves the names of participants (shelters and adopters) registered for a specific adoption event.
+ Use a parameter to specify the event ID. 
+ Ensure that the query joins the necessary tables to retrieve the participant names and types.
+
+->
+
+mysql> SELECT P.ParticipantName, P.ParticipantType
+    -> FROM Participants P
+    -> JOIN AdoptionEvents AE ON P.EventID = AE.EventID
+    -> WHERE P.EventID = 1;
++--------------------+-----------------+
+| ParticipantName    | ParticipantType |
++--------------------+-----------------+
+| Aashray Foundation | Shelter         |
+| Ayyaj Aga          | Adopter         |
++--------------------+-----------------+
+2 rows in set (0.03 sec)
+
+

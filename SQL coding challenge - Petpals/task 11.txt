@@ -1,0 +1,17 @@
+Q. Retrieve a list of distinct breeds for all pets that are either aged between 1 and 3 years or older than 5 years
+
+->
+mysql> SELECT DISTINCT Breed
+    -> FROM Pets
+    -> WHERE (Age BETWEEN 1 AND 3) OR (Age > 5);
++------------------+
+| Breed            |
++------------------+
+| Golden Retriever |
+| Siamese          |
+| Persian          |
+| Poodle           |
+| Maine Coon       |
+| Shiba Inu        |
++------------------+
+6 rows in set (0.10 sec)
