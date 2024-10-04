@@ -3,5 +3,9 @@ Q.Write an SQL query that retrieves the total donation amount for each month and
   Ensure that the query handles cases where no donations were made in a specific month-year.
 
 ->
+mysql> select DATE_FORMAT(DonationDate,'%M %Y'),SUM(DonationAmount) as TOTALAMOUNT
+    -> from donations
+    -> group by DATE_FORMAT(DonationDate,'%M %Y');
+
 
 
