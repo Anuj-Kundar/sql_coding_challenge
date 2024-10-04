@@ -2,14 +2,6 @@ Q. Find pairs of pets from the same shelter that have the same breed.
 
 ->
 
-
-SELECT P1.Name AS Pet1, P2.Name AS Pet2, P1.Breed, P1.ShelterID
-FROM (
-    SELECT PetID, Name, Breed, ShelterID
-    FROM Pets
-) P1
-JOIN (
-    SELECT PetID, Name, Breed, ShelterID
-    FROM Pets
-) P2 ON P1.Breed = P2.Breed AND P1.ShelterID = P2.ShelterID AND P1.PetID < P2.PetID
-ORDER BY P1.ShelterID, P1.Breed, P1.Name, P2.Name;
+mysql->SELECT p1.Name AS Pet1, p2.Name AS Pet2, p1.Breed 
+     ->FROM Pets p1 
+     ->JOIN Pets p2 ON p1.ShelterID = p2.ShelterID AND p1.Breed = p2.Breed AND p1.PetID != p2.PetID;

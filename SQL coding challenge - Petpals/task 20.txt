@@ -1,12 +1,7 @@
 Q. Determine the shelter that has the highest number of adopted pets.
 
-SELECT ShelterName, AdoptedPetsCount
-FROM (
-    SELECT s.Name AS ShelterName, COUNT(p.PetID) AS AdoptedPetsCount
-    FROM Shelters s
-    JOIN Pets p ON s.ShelterID = p.ShelterID -- Ensure this column exists in Pets table
-    WHERE p.AvailableForAdoption = 0 -- Assuming 0 means adopted
-    GROUP BY s.Name
-) AS ShelterAdoptions
-ORDER BY AdoptedPetsCount DESC
-LIMIT 1;
+mysql> select shelters.name,COUNT(pets.PetID) as AdoptedPets
+    -> from shelters
+    -> join pets on shelters.ShelterID=pets.ShelterID
+    -> group by shelters.name
+    -> order by AdoptedPets DESC;
