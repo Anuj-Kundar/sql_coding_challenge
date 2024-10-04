@@ -1,25 +1,9 @@
-Q.Create a query to show details of pets along with adoption events ,and participation details :
-  from pet table pet id,name,breed and type
+Q.7 write update query to update increase donation amount by 50% if it is less than 100 cash
 
 ->
 
-SELECT 
-    p.PetID AS PetID,
-    p.Name AS PetName,
-    p.Breed,
-    p.Type,
-    a.EventID AS EventID,
-    a.EventName AS EventName,
-    a.EventDate AS EventDate,
-    a.Location AS EventLocation,
-    par.ParticipantID AS ParticipantID,
-    par.ParticipantName AS ParticipantName,
-    par.ParticipantType AS ParticipantType
-FROM 
-    Pets p
-LEFT JOIN 
-    Participants par ON par.EventID IN (
-        SELECT EventID FROM AdoptionEvents WHERE EventID = par.EventID
-    )
-LEFT JOIN 
-    AdoptionEvents a ON a.EventID = par.EventID;
+UPDATE donations
+Set DonationAmount=DonationAmount*1.5
+WHERE DonationAmount<100;
+
+
